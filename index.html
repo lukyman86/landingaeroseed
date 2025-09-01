@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AroSeed — Tanam Bibit Digital, Panen Token Nyata</title>
+
+  <!-- SEO -->
+  <meta name="description" content="AroSeed: platform Solana untuk komunitas agro-crypto. Presale AGC, reward token HST, referral, check-in harian, dan tugas berhadiah." />
+  <meta name="theme-color" content="#27ae60" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AroSeed — Tanam Bibit Digital, Panen Token Nyata" />
+  <meta property="og:description" content="Presale AGC di Solana. Reward token HST, referral, check-in harian, dan tugas berhadiah." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo.svg" />
+
+  <link rel="icon" href="assets/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ====== NAV ====== -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <div class="nav__brand">
+        <img src="assets/logo.svg" alt="AroSeed Logo" class="nav__logo" />
+        <span class="nav__title">AroSeed</span>
+      </div>
+
+      <div class="nav__actions">
+        <a href="#presale" class="btn btn--ghost" data-i18n="nav_presale">Presale</a>
+        <a href="#rewards" class="btn btn--ghost" data-i18n="nav_rewards">Rewards</a>
+        <a href="#roadmap" class="btn btn--ghost" data-i18n="nav_roadmap">Roadmap</a>
+        <a href="#contact" class="btn btn--ghost" data-i18n="nav_contact">Kontak</a>
+
+        <button id="langToggle" class="btn btn--lang" aria-label="Toggle language">ID / EN</button>
+        <a href="https://t.me/channelagc" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="join_telegram">Gabung Telegram</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== HERO ====== -->
+  <header class="hero">
+    <img class="hero__bg" src="assets/hero-bg.svg" alt="" aria-hidden="true" />
+    <div class="container hero__inner">
+      <h1 class="hero__title" data-i18n="hero_title">Tanam Bibit Digital, Panen Token Nyata!</h1>
+      <p class="hero__subtitle" data-i18n="hero_sub">
+        Ekosistem agro-crypto di jaringan Solana. Dapatkan reward Hybrid Seeds Token ($HST) dan ikuti presale AGC.
+      </p>
+      <div class="hero__cta">
+        <a href="#presale" class="btn btn--primary" data-i18n="cta_presale">Ikuti Presale AGC</a>
+        <a href="#rewards" class="btn btn--secondary" data-i18n="cta_rewards">Lihat Rewards HST</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== PRESALE ====== -->
+  <section id="presale" class="section">
+    <div class="container section__inner">
+      <h2 data-i18n="presale_title">Presale Token AGC</h2>
+      <p class="muted" data-i18n="presale_caption">
+        Harga 1 AGC = <b>0.001 SOL</b> • Maksimal kuota presale: <b>1,000,000 AGC</b>
+      </p>
+
+      <div class="card grid grid--2">
+        <div class="card__col">
+          <h3 class="card__title" data-i18n="presale_form_title">Form Pemesanan</h3>
+          <form id="presaleForm" class="form">
+            <label class="form__label" for="name" data-i18n="form_name">Nama Lengkap</label>
+            <input id="name" name="name" class="form__input" type="text" placeholder="Nama kamu" required />
+
+            <label class="form__label" for="email" data-i18n="form_email">Email</label>
+            <input id="email" name="email" class="form__input" type="email" placeholder="email@contoh.com" required />
+
+            <label class="form__label" for="wallet" data-i18n="form_wallet">Alamat Wallet Solana</label>
+            <input id="wallet" name="wallet" class="form__input" type="text" placeholder="Contoh: HVsC...RJnP" required />
+
+            <label class="form__label" for="amount" data-i18n="form_amount">Jumlah AGC</label>
+            <input id="amount" name="amount" class="form__input" type="number" min="1" max="1000000" placeholder="Misal: 1000" required />
+
+            <button class="btn btn--primary btn--full" type="submit" data-i18n="btn_buy">Beli Sekarang</button>
+            <p class="form__footnote" data-i18n="form_note">
+              * Ini simulasi front-end. Integrasi pembayaran on-chain & backend bisa ditambahkan kemudian.
+            </p>
+          </form>
+        </div>
+
+        <div class="card__col">
+          <h3 class="card__title" data-i18n="presale_info_title">Info Presale</h3>
+          <ul class="list">
+            <li data-i18n="presale_info_1">Blockchain: Solana (Devnet untuk uji, Mainnet saat rilis)</li>
+            <li data-i18n="presale_info_2">Harga tetap: 0.001 SOL per 1 AGC</li>
+            <li data-i18n="presale_info_3">Kuota presale: 1,000,000 AGC</li>
+            <li data-i18n="presale_info_4">Konfirmasi via email & Telegram</li>
+          </ul>
+
+          <div class="countdown">
+            <p class="countdown__label" data-i18n="presale_countdown">Hitung mundur presale</p>
+            <div id="countdown" class="countdown__value">00d : 00h : 00m : 00s</div>
+          </div>
+
+          <div class="note">
+            <p data-i18n="disclaimer">
+              Catatan: Konten ini untuk tujuan promosi & pengujian. Lakukan riset mandiri sebelum membeli aset kripto.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== REWARDS HST ====== -->
+  <section id="rewards" class="section section--alt">
+    <div class="container section__inner">
+      <h2 data-i18n="rewards_title">Rewards Hybrid Seeds Token ($HST)</h2>
+      <div class="card grid grid--2">
+        <ul class="list list--lg">
+          <li data-i18n="r1">Daftar dengan referral: <b>50 HST</b></li>
+          <li data-i18n="r2">Daftar tanpa referral: <b>15 HST</b></li>
+          <li data-i18n="r3">Check-in harian: <b>50 HST</b></li>
+        </ul>
+        <ul class="list list--lg">
+          <li data-i18n="r4">Tugas harian: <b>25 HST</b> per tugas</li>
+          <li data-i18n="r5">Bonus referral: <b>100 HST</b></li>
+          <li data-i18n="r6">Lulus KYC: <b>1000 HST</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ROADMAP ====== -->
+  <section id="roadmap" class="section">
+    <div class="container section__inner">
+      <h2 data-i18n="roadmap_title">Roadmap</h2>
+      <div class="timeline">
+        <div class="timeline__item fade-in">
+          <h4 data-i18n="rm1_t">Q1 — Foundation</h4>
+          <p data-i18n="rm1_d">Riset pasar, desain tokenomics HST/AGC, prototipe aplikasi & landing.</p>
+        </div>
+        <div class="timeline__item fade-in">
+          <h4 data-i18n="rm2_t">Q2 — Presale & Komunitas</h4>
+          <p data-i18n="rm2_d">Presale AGC, program referral, pembentukan AECO Community.</p>
+        </div>
+        <div class="timeline__item fade-in">
+          <h4 data-i18n="rm3_t">Q3 — App & Wallet</h4>
+          <p data-i18n="rm3_d">Rilis AroSeed APK (KYC, chat, rewards), integrasi wallet & bot reward.</p>
+        </div>
+        <div class="timeline__item fade-in">
+          <h4 data-i18n="rm4_t">Q4 — Mainnet & Listing</h4>
+          <p data-i18n="rm4_d">Migrasi 10:1 Devnet→Mainnet HST, burn 9M, target listing DEX.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT ====== -->
+  <section id="contact" class="section section--alt">
+    <div class="container section__inner">
+      <h2 data-i18n="contact_title">Kontak & Komunitas</h2>
+      <p class="muted" data-i18n="contact_desc">
+        Ikuti kanal resmi kami untuk update pengembangan & jadwal presale.
+      </p>
+      <div class="cta-row">
+        <a href="https://t.me/channelagc" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="join_telegram">Gabung Telegram</a>
+        <a href="#presale" class="btn btn--secondary" data-i18n="cta_presale">Ikuti Presale AGC</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; <span id="year"></span> AroSeed • <span data-i18n="footer_rights">Semua hak dilindungi.</span></p>
+      <p class="footnote" data-i18n="footer_powered">Powered by Solana • AECO Community</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
